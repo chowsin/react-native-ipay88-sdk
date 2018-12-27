@@ -51,8 +51,7 @@ import IPay88, { Pay } from "ipay88-sdk";
 
 export default class App extends Component {
   successNotify = data => {
-    if (Platform.OS === "ios") {
-      const {
+     const {
         transactionId,
         referenceNo,
         amount,
@@ -60,6 +59,7 @@ export default class App extends Component {
         authorizationCode
       } = data;
 
+    if (Platform.OS === "ios") {
       Alert.alert("Message", `Payment authcode is ${authorizationCode}`, {
         cancelable: true
       });
